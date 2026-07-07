@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap');
+
+/*
+  Fuente local preparada:
+  Cuando tengas Cocomat Pro, guarda el archivo en public/fonts/CocomatPro.woff2
+  y descomenta este bloque.
+
+  @font-face {
+    font-family: 'Cocomat Pro';
+    src: url('/fonts/CocomatPro.woff2') format('woff2');
+    font-display: swap;
+  }
+*/
+
+:root {
+  --color-black: #1b1b1b;
+  --color-violet: #6d5ef8;
+  --color-blue: #4d8dff;
+  --color-soft-white: #f5f7fa;
+  --color-graphite: #2a2d36;
+  --color-light-gray: #d9dee7;
+  --bg: #1b1b1b;
+  --bg-raised: #20232b;
+  --bg-soft: #252934;
+  --text: #f5f7fa;
+  --text-muted: rgba(245, 247, 250, 0.74);
+  --text-soft: rgba(245, 247, 250, 0.62);
+  --line: rgba(217, 222, 231, 0.14);
+  --glass: rgba(245, 247, 250, 0.065);
+  --glass-strong: rgba(245, 247, 250, 0.1);
+  --header-bg: rgba(27, 27, 27, 0.72);
+  --header-text: rgba(245, 247, 250, 0.78);
+  --shadow-soft: 0 24px 70px rgba(27, 27, 27, 0.18);
+  --scroll-progress: 0;
+  --page-gutter: clamp(20px, 5vw, 72px);
+  --font-heading: 'Cocomat Pro', 'Sora', system-ui, sans-serif;
+  --font-body: 'Sora', system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.55;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root[data-theme='light'] {
+  --bg: #eef2f7;
+  --bg-raised: #e5ebf3;
+  --bg-soft: #dce4ef;
+  --text: #1b1b1b;
+  --text-muted: rgba(42, 45, 54, 0.74);
+  --text-soft: rgba(42, 45, 54, 0.58);
+  --line: rgba(42, 45, 54, 0.15);
+  --glass: rgba(220, 228, 239, 0.66);
+  --glass-strong: rgba(238, 242, 247, 0.86);
+  --header-bg: rgba(229, 235, 243, 0.78);
+  --header-text: rgba(42, 45, 54, 0.76);
+  --shadow-soft: 0 24px 70px rgba(42, 45, 54, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(77, 141, 255, 0.08), transparent 28%),
+    radial-gradient(circle at 88% 18%, rgba(109, 94, 248, 0.07), transparent 30%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-raised) 48%, var(--bg) 100%);
+}
+
+::selection {
+  background: rgba(109, 94, 248, 0.45);
+  color: #ffffff;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+strong {
+  color: var(--text);
+  font-weight: 800;
+}
+
+em {
+  color: color-mix(in srgb, var(--color-blue) 78%, var(--color-violet));
+  font-style: normal;
+  font-weight: 700;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  padding: 0;
+  margin: -1px;
+}
