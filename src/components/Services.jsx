@@ -41,7 +41,7 @@ const services = [
     description: (
       <>
         Cuando Excel, WhatsApp o varias herramientas sueltas empiezan a quedarse cortas,
-        desarrollo software interno adaptado al negocio. No se trata de meter otra
+        desarrollo software interno adaptado al negocio. No se trata de implantar otra
         plataforma más, sino de crear una herramienta que <strong>encaje con el día a día</strong>.
       </>
     ),

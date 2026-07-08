@@ -40,7 +40,7 @@ function Contact() {
           <h2>¿Tienes una idea o un proceso que crees que podría <strong>mejorar</strong>?</h2>
           <p>
             Cuéntame cómo trabajas y qué parte de tu negocio te gustaría simplificar.
-            Si lo tienes claro, genial. Si no, también. Podemos empezar por detectar
+            Si lo tienes claro, genial. Si no, también. Puedo empezar por detectar
             <strong> dónde se está perdiendo tiempo</strong>.
           </p>
         </div>

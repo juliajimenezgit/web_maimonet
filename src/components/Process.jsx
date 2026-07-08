@@ -1,8 +1,8 @@
 const steps = [
-  { id: 'understand', content: <>Entendemos <strong>cómo trabajas</strong></> },
-  { id: 'improve', content: <>Detectamos qué puede mejorar</> },
-  { id: 'design', content: <>Diseñamos la <strong>solución</strong></> },
-  { id: 'build', content: <>Desarrollamos y <em>acompañamos</em></> },
+  { id: 'understand', content: <>Entiendo <strong>cómo trabajas</strong></> },
+  { id: 'improve', content: <>Detecto qué puede mejorar</> },
+  { id: 'design', content: <>Diseño la <strong>solución</strong></> },
+  { id: 'build', content: <>Desarrollo y <em>acompaño</em></> },
 ]
 
 function Process() {
