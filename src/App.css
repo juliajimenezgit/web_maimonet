@@ -634,6 +634,66 @@
     var(--bg);
 }
 
+.case-carousel {
+  display: grid;
+  gap: 18px;
+}
+
+.case-carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.case-carousel__button {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--glass);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.case-carousel__button:hover,
+.case-carousel__button:focus-visible {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--color-blue) 40%, var(--line));
+  background: color-mix(in srgb, var(--text) 6%, var(--glass));
+}
+
+.case-carousel__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.case-carousel__dots {
+  display: flex;
+  gap: 8px;
+}
+
+.case-carousel__dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--text) 25%, transparent);
+  cursor: pointer;
+}
+
+.case-carousel__dot.is-active {
+  background: linear-gradient(135deg, var(--color-violet), var(--color-blue));
+}
+
+.case-carousel__grid {
+  align-items: stretch;
+}
+
 .case-card {
   padding: 28px;
 }
@@ -1110,9 +1170,21 @@
     max-width: 360px;
   }
 
-  .services-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
   .cases-grid {
     grid-template-columns: 1fr;
+  }
+
+  .case-carousel__controls {
+    justify-content: center;
+  }
+
+  .case-carousel__button {
+    width: 38px;
+    height: 38px;
   }
 
   .service-card {
