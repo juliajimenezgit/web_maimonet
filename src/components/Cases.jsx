@@ -1,21 +1,39 @@
 const cases = [
   {
-    title: 'Automatización de documentos y tareas administrativas',
-    problem: <>Una empresa dedicaba varias horas a la semana a crear documentos repetitivos, copiar información entre archivos y realizar procesos manuales.</>,
-    solution: <>Desarrollo de un sistema personalizado que organiza la información y genera documentos automáticamente siguiendo sus propios criterios y formatos.</>,
-    result: <>Menos trabajo manual, reducción de errores y más tiempo para centrarse en tareas de mayor valor.</>,
+    title: 'Gestión automática de pedidos y comunicación con clientes para una inmobiliaria',
+    problem: <>Una inmobiliaria recibía diariamente solicitudes de clientes por correo, WhatsApp y formularios web, y cada petición debía revisarse y registrarse manualmente.</>,
+    solution: <>Desarrollé un sistema que centralizaba automáticamente las solicitudes, clasificaba cada petición, creaba la ficha correspondiente y avisaba al equipo cuando necesitaba intervención.</>,
+    result: <>Se redujo el tiempo dedicado a revisar correos y copiar información, disminuyeron los errores manuales y los clientes recibieron actualizaciones automáticas del estado de sus solicitudes.</>,
   },
   {
-    title: 'Herramienta interna para centralizar procesos',
-    problem: <>La información del negocio estaba repartida entre hojas de Excel, correos y diferentes documentos, dificultando el seguimiento diario.</>,
-    solution: <>Creación de una aplicación web privada adaptada a su forma de trabajar para gestionar clientes, datos y procesos desde un único lugar.</>,
-    result: <>Información centralizada, procesos más rápidos y una gestión interna más sencilla.</>,
+    title: 'Generador automático de informes profesionales para un estudio de arquitectura',
+    problem: <>Un estudio de arquitectura realizaba revisiones técnicas y dedicaba horas a transformar notas, fotografías y datos internos en documentos finales bien presentados.</>,
+    solution: <>Creé una herramienta donde el equipo añadía la información recogida durante la visita y el sistema organizaba los datos, generaba el informe siguiendo la estructura de la empresa y preparaba un documento listo para revisar y entregar.</>,
+    result: <>Los informes se creaban en minutos, todos seguían el mismo formato profesional y la información histórica podía localizarse mucho más rápido.</>,
   },
   {
-    title: 'Asistente IA personalizado para consultar información empresarial',
-    problem: <>El equipo perdía tiempo buscando información entre documentos, manuales y archivos internos.</>,
-    solution: <>Implementación de un asistente con inteligencia artificial conectado a su propia documentación para obtener respuestas rápidas y precisas.</>,
-    result: <>Acceso inmediato al conocimiento interno y menos dependencia de búsquedas manuales.</>,
+    title: 'Software para cálculo de corrosión de materiales',
+    problem: <>Una empresa de ingeniería necesitaba evaluar el deterioro de materiales según humedad, temperatura, antigüedad y protocolos técnicos, sin depender de procesos manuales y poco claros.</>,
+    solution: <>Desarrollé una aplicación con módulos de cálculo, curvas de evolución y visualización histórica de datos de más de 50 años. Además, incorporé un asistente virtual para explicar protocolos y resultados en lenguaje natural.</>,
+    result: <>Se convirtió en una herramienta útil tanto para ingenieros como para usuarios no técnicos, con cálculos más comprensibles, trazabilidad y mejor toma de decisiones.</>,
+  },
+  {
+    title: 'App de películas con listas compartidas y recomendaciones',
+    problem: <>Una plataforma de contenido quería que varias personas pudieran crear playlists compartidas, descubrir títulos con facilidad y recibir recomendaciones más personalizadas.</>,
+    solution: <>Diseñé una app conectada a APIs públicas de películas y series, con listas compartidas, votaciones, navegación tipo swipe y un asistente conversacional que recomendaba contenido según los gustos y hábitos de cada usuario.</>,
+    result: <>La experiencia se volvió más social, más intuitiva y mucho más atractiva para el usuario final.</>,
+  },
+  {
+    title: 'Software de recordatorios para clínica veterinaria',
+    problem: <>Una veterinaria necesitaba automatizar recordatorios de vacunas, revisiones, desparasitaciones, seguros y limpiezas, evitando olvidos y llamadas manuales.</>,
+    solution: <>Implementé un sistema que registraba cada intervención y calculaba automáticamente los próximos eventos. Además enviaba avisos por SMS y email a los clientes en el momento adecuado.</>,
+    result: <>Se redujeron los olvidos, mejoró la fidelización de los clientes y el equipo gestionó la agenda con mucha menos carga manual.</>,
+  },
+  {
+    title: 'Sistema de votación para concurso de charangas',
+    problem: <>La organización necesitaba un sistema de votación seguro y rápido para un concurso con 4 charangas, donde cada voto debía contar una sola vez y los resultados debían verse en directo.</>,
+    solution: <>Creé una web para la votación pública y una landing privada para la administración. Los votos se validaban automáticamente, se mostraban resultados y opiniones de forma ordenada y se facilitaba la gestión del evento.</>,
+    result: <>Se eliminó el recuento manual, se mejoró la seguridad del proceso y la experiencia tanto para participantes como para la organización fue mucho más fluida.</>,
   },
 ]
 
