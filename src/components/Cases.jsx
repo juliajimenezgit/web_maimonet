@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react'
-
 const cases = [
   {
     title: 'Gestión automática de pedidos y comunicación con clientes para una inmobiliaria',
@@ -40,36 +38,6 @@ const cases = [
 ]
 
 function Cases() {
-  const [cardsPerPage, setCardsPerPage] = useState(3)
-  const [activeSlide, setActiveSlide] = useState(0)
-
-  useEffect(() => {
-    const updateCardsPerPage = () => {
-      setCardsPerPage(window.innerWidth < 900 ? 1 : 3)
-    }
-
-    updateCardsPerPage()
-    window.addEventListener('resize', updateCardsPerPage)
-
-    return () => window.removeEventListener('resize', updateCardsPerPage)
-  }, [])
-
-  useEffect(() => {
-    setActiveSlide(0)
-  }, [cardsPerPage])
-
-  const totalSlides = Math.max(1, Math.ceil(cases.length / cardsPerPage))
-  const startIndex = activeSlide * cardsPerPage
-  const visibleCases = cases.slice(startIndex, startIndex + cardsPerPage)
-
-  const goToPrevious = () => {
-    setActiveSlide((current) => (current === 0 ? totalSlides - 1 : current - 1))
-  }
-
-  const goToNext = () => {
-    setActiveSlide((current) => (current + 1) % totalSlides)
-  }
-
   return (
     <section className="section cases-section" id="casos">
       <div className="section__inner">
@@ -77,60 +45,26 @@ function Cases() {
           <span className="eyebrow">Casos de Éxito</span>
           <h2>Ejemplos de problemas reales resueltos con tecnología a medida.</h2>
         </div>
-        <div className="case-carousel" data-reveal>
-          <div className="case-carousel__controls">
-            <button
-              className="case-carousel__button"
-              type="button"
-              aria-label="Ver casos anteriores"
-              onClick={goToPrevious}
-              disabled={totalSlides <= 1}
-            >
-              ←
-            </button>
-            <div className="case-carousel__dots" aria-label="Navegación de casos">
-              {Array.from({ length: totalSlides }, (_, index) => (
-                <button
-                  key={index}
-                  className={`case-carousel__dot ${index === activeSlide ? 'is-active' : ''}`}
-                  type="button"
-                  aria-label={`Ir al caso ${index + 1}`}
-                  aria-current={index === activeSlide ? 'true' : undefined}
-                  onClick={() => setActiveSlide(index)}
-                />
-              ))}
-            </div>
-            <button
-              className="case-carousel__button"
-              type="button"
-              aria-label="Ver casos siguientes"
-              onClick={goToNext}
-              disabled={totalSlides <= 1}
-            >
-              →
-            </button>
-          </div>
-          <div className="cases-grid case-carousel__grid" style={{ gridTemplateColumns: `repeat(${cardsPerPage}, minmax(0, 1fr))` }}>
-            {visibleCases.map((item) => (
-              <article className="case-card" key={item.title} data-reveal>
-                <h3>{item.title}</h3>
-                <dl>
-                  <div>
-                    <dt>Problema</dt>
-                    <dd>{item.problem}</dd>
-                  </div>
-                  <div>
-                    <dt>Solución</dt>
-                    <dd>{item.solution}</dd>
-                  </div>
-                  <div>
-                    <dt>Resultado</dt>
-                    <dd>{item.result}</dd>
-                  </div>
-                </dl>
-              </article>
-            ))}
-          </div>
+        <div className="cases-grid" data-reveal>
+          {cases.map((item) => (
+            <article className="case-card" key={item.title} data-reveal>
+              <h3>{item.title}</h3>
+              <dl>
+                <div>
+                  <dt>Problema</dt>
+                  <dd>{item.problem}</dd>
+                </div>
+                <div>
+                  <dt>Solución</dt>
+                  <dd>{item.solution}</dd>
+                </div>
+                <div>
+                  <dt>Resultado</dt>
+                  <dd>{item.result}</dd>
+                </div>
+              </dl>
+            </article>
+          ))}
         </div>
         <p className="cases-note" data-reveal>
           Por confidencialidad, los casos mostrados representan soluciones desarrolladas sin exponer información privada de clientes. Cada proyecto se adapta desde cero a los procesos y necesidades reales de cada empresa.
