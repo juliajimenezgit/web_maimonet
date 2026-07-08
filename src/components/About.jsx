@@ -24,7 +24,7 @@ function About() {
               viviendo y formándose en Madrid. Después de esa etapa, Maimonet nace como
               el paso natural hacia un <strong>proyecto propio</strong>: una forma de aplicar lo aprendido,
               seguir creciendo y construir una marca basada en la calidad del trabajo, la
-              <em>cercanía</em>, la empatía y la mejora continua.
+              <em> cercanía</em>, la empatía y la mejora continua.
             </p>
             <p>
               Antes de iniciar este camino, he trabajado durante casi 5 años en el sector
