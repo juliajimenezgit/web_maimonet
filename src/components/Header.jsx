@@ -3,7 +3,7 @@ import compactLogo from '../assets/brand/logo_compacto.png'
 
 const navItems = [
   { label: 'Servicios', href: '#servicios' },
-  { label: 'Casos', href: '#casos' },
+  { label: 'Casos de Éxito', href: '#casos' },
   { label: 'Proceso', href: '#proceso' },
   { label: 'Sobre mí', href: '#sobre' },
 ]
@@ -60,8 +60,8 @@ function Header({ theme, onToggleTheme }) {
           <ThemeIcon theme={theme} />
         </button>
         <a className="header-cta" href="#contacto">
-          <span className="header-cta__full">Cuéntame tu proyecto</span>
-          <span className="header-cta__short">Proyecto</span>
+          <span className="header-cta__full">¿Hablamos?</span>
+          <span className="header-cta__short">Contacto</span>
         </a>
       </div>
       <nav

@@ -55,7 +55,7 @@ function Hero({ theme }) {
           <em> automatizar procesos</em> y hacer crecer tu negocio.
         </p>
         <div className="hero-actions" data-reveal>
-          <a className="button button-primary" href="#contacto">Cuéntame tu proyecto</a>
+          <a className="button button-primary" href="#contacto">¿Hablamos?</a>
           <a className="button button-secondary" href="#servicios">Ver soluciones</a>
         </div>
       </div>

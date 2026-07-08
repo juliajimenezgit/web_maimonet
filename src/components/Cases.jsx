@@ -24,7 +24,7 @@ function Cases() {
     <section className="section cases-section" id="casos">
       <div className="section__inner">
         <div className="section-heading section-heading--wide" data-reveal>
-          <span className="eyebrow">Casos reales</span>
+          <span className="eyebrow">Casos de Éxito</span>
           <h2>Ejemplos de problemas reales resueltos con tecnología a medida.</h2>
         </div>
         <div className="cases-grid">
