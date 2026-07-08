@@ -28,6 +28,15 @@ function App() {
       { threshold: 0.18, rootMargin: '-5% 0px -8%' },
     )
 
+    const revealItems = () => {
+      if (window.innerWidth < 980) {
+        animatedItems.forEach((item) => item.classList.add('is-visible'))
+        return
+      }
+
+      animatedItems.forEach((item) => observer.observe(item))
+    }
+
     const updateScrollState = () => {
       const currentScrollY = window.scrollY
       const maxScroll = document.body.scrollHeight - window.innerHeight
@@ -48,7 +57,7 @@ function App() {
       }
     }
 
-    animatedItems.forEach((item) => observer.observe(item))
+    revealItems()
     updateScrollState()
     window.addEventListener('scroll', onScroll, { passive: true })
 
