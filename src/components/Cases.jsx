@@ -30,11 +30,11 @@ const cases = [
     result: <>Se redujeron los olvidos, mejoró la fidelización de los clientes y el equipo gestionó la agenda con mucha menos carga manual.</>,
   },
   {
-    title: 'Sistema de votación para concurso nacional de charangas',
-    problem: <>La organización de un concurso nacional de charangas necesitaba digitalizar un proceso de votación con una gran participación. Buscaban evitar recuentos manuales, controlar que cada persona pudiera votar una sola vez y consultar la evolución del concurso en tiempo real.</>,
-    solution: <>Desarrollé una herramienta a medida con votación online, panel privado de resultados en tiempo real y controles de seguridad para permitir un único voto por dispositivo y validar que la participación se realizara desde la ubicación del concurso.</>,
-    result: <>La organización eliminó tareas repetitivas, redujo errores humanos y pudo gestionar el concurso de forma más sencilla, segura y profesional, garantizando una votación más controlada y una mejor experiencia para participantes y público.</>,
-  }
+    title: 'Sistema de votación digital para concurso nacional de charangas',
+    problem: <>La organización de un concurso nacional de charangas necesitaba gestionar cientos de votos del público en directo, evitando recuentos manuales y garantizando una participación controlada.</>,
+    solution: <>Desarrollé una plataforma de votación con resultados en tiempo real, panel privado de administración y controles automáticos para validar cada voto según dispositivo y ubicación del evento.</>,
+    result: <>El proceso de votación fue más rápido, seguro y transparente, permitiendo a la organización conocer los resultados al instante y centrarse en la gestión del concurso.</>,
+  },
 ]
 
 function Cases() {
