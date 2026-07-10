@@ -30,8 +30,8 @@ const cases = [
     result: <>Se redujeron los olvidos, mejoró la fidelización de los clientes y el equipo gestionó la agenda con mucha menos carga manual.</>,
   },
   {
-    title: 'Sistema de votación para concurso de charangas',
-    problem: <>La organización necesitaba un sistema de votación seguro y rápido para un concurso con 4 charangas, donde cada voto debía contar una sola vez y los resultados debían verse en directo.</>,
+    title: 'Sistema de votación para concurso nacional de charangas',
+    problem: <>La organización necesitaba un sistema de votación seguro y rápido para un concurso nacional de charangas, donde cada voto debía contar una sola vez y los resultados debían verse en directo.</>,
     solution: <>Creé una web para la votación pública y una landing privada para la administración. Los votos se validaban automáticamente, se mostraban resultados y opiniones de forma ordenada y se facilitaba la gestión del evento.</>,
     result: <>Se eliminó el recuento manual, se mejoró la seguridad del proceso y la experiencia tanto para participantes como para la organización fue mucho más fluida.</>,
   },
