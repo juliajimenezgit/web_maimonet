@@ -1,5 +1,5 @@
-import whiteLogo from '../assets/brand/logo_completo_blanco.png'
-import blackLogo from '../assets/brand/logo_completo_negro.png'
+const whiteLogo = '/images/logo-maimonet-blanco.png'
+const blackLogo = '/images/logo-maimonet-negro.png'
 
 function Hero({ theme }) {
   const logo = theme === 'dark' ? whiteLogo : blackLogo
@@ -42,17 +42,17 @@ function Hero({ theme }) {
             <circle cx="654" cy="126" r="8" />
           </g>
         </svg>
-        <img className="hero-brand-logo" src={logo} alt="" />
+        <img className="hero-brand-logo" src={logo} width="1200" height="1200" alt="" />
       </div>
       <div className="hero-content">
         <div className="hero-inline-logo-frame" data-reveal>
-          <img className="hero-inline-logo" src={logo} alt="Maimonet" />
+          <img className="hero-inline-logo" src={logo} width="1200" height="1200" alt="Maimonet" />
         </div>
-        <h1 className="sr-only">Maimonet</h1>
+        <h1 className="sr-only">Maimonet: software, automatización e inteligencia artificial para empresas</h1>
         <p className="hero-kicker" data-reveal>Tecnología que resuelve <strong>problemas reales</strong></p>
         <p className="hero-copy" data-reveal>
-          Soluciones digitales <strong>a medida</strong> para ahorrar tiempo,
-          <em> automatizar procesos</em> y hacer crecer tu negocio.
+          Software, automatización e inteligencia artificial <strong>a medida</strong> para
+          ahorrar tiempo, <em>mejorar procesos</em> y hacer crecer tu negocio.
         </p>
         <div className="hero-actions" data-reveal>
           <a className="button button-primary" href="#contacto">¿Hablamos?</a>

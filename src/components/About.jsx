@@ -1,11 +1,18 @@
-import juliaProfile from '../assets/imagen_perfil_julia.PNG'
-
 function About() {
   return (
     <section className="section section-about" id="sobre">
       <div className="section__inner about-grid">
         <div className="about-portrait" data-reveal>
-          <img src={juliaProfile} alt="Julia Jiménez Ayuso, fundadora de Maimonet" />
+          <img
+            src="/images/julia-jimenez-ayuso-840.jpg"
+            srcSet="/images/julia-jimenez-ayuso-420.jpg 420w, /images/julia-jimenez-ayuso-840.jpg 840w"
+            sizes="(max-width: 620px) 90vw, (max-width: 980px) 360px, 420px"
+            width="840"
+            height="840"
+            loading="lazy"
+            decoding="async"
+            alt="Julia Jiménez Ayuso, fundadora de Maimonet"
+          />
           <div className="about-portrait__caption">
             <strong>Julia Jiménez Ayuso</strong>
             <span>Fundadora de Maimonet</span>

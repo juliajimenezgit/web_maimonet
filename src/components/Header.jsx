@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import compactLogo from '../assets/brand/logo_compacto.png'
+import { useRef, useState } from 'react'
+const compactLogo = '/favicon-96.png'
 
 const navItems = [
   { label: 'Servicios', href: '#servicios' },
@@ -27,11 +27,17 @@ function ThemeIcon({ theme }) {
 
 function Header({ theme, onToggleTheme }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const menuButton = useRef(null)
 
   return (
-    <header className="site-header">
+    <header className="site-header" onKeyDown={(event) => {
+      if (event.key === 'Escape' && isMenuOpen) {
+        setIsMenuOpen(false)
+        menuButton.current?.focus()
+      }
+    }}>
       <a className="brand" href="#inicio" aria-label="Maimonet inicio">
-        <img className="brand__logo" src={compactLogo} alt="" aria-hidden="true" />
+        <img className="brand__logo" src={compactLogo} width="96" height="96" alt="" aria-hidden="true" />
       </a>
       <nav className="site-nav" aria-label="Navegación principal">
         {navItems.map((item) => (
@@ -41,6 +47,7 @@ function Header({ theme, onToggleTheme }) {
       <div className="header-actions">
         <button
           className="menu-toggle"
+          ref={menuButton}
           type="button"
           aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
           aria-expanded={isMenuOpen}
@@ -67,6 +74,7 @@ function Header({ theme, onToggleTheme }) {
       <nav
         className={`mobile-menu ${isMenuOpen ? 'is-open' : ''}`}
         id="mobile-menu"
+        hidden={!isMenuOpen}
         aria-label="Navegación móvil"
       >
         {navItems.map((item) => (

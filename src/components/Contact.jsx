@@ -2,10 +2,10 @@ import { useState } from 'react'
 
 const contactLinks = [
   {
-    label: 'WhatsApp o llamada',
+    label: 'WhatsApp',
     value: '+34 636 809 719',
     href: 'https://wa.me/34636809719',
-    note: 'Contesto rápido por WhatsApp. Si prefieres llamar, también perfecto.',
+    note: 'Cuéntame qué necesitas por WhatsApp.',
   },
   {
     label: 'Email',
@@ -31,6 +31,21 @@ const contactLinks = [
 
 function Contact() {
   const [isFormOpen, setIsFormOpen] = useState(false)
+  const [emailPrepared, setEmailPrepared] = useState(false)
+
+  const prepareEmail = (event) => {
+    event.preventDefault()
+    const data = new FormData(event.currentTarget)
+    const body = [
+      `Nombre: ${data.get('name')}`,
+      `Empresa: ${data.get('company') || 'No indicada'}`,
+      `Email de contacto: ${data.get('email')}`,
+      '',
+      data.get('message'),
+    ].join('\n')
+    window.location.href = `mailto:juliajimenezayuso@maimonet.es?subject=${encodeURIComponent('Consulta sobre un proyecto — Maimonet')}&body=${encodeURIComponent(body)}`
+    setEmailPrepared(true)
+  }
 
   return (
     <section className="section contact-section" id="contacto">
@@ -71,29 +86,36 @@ function Contact() {
             <small>Si prefieres dejarlo escrito paso a paso</small>
           </button>
         </div>
-        <div className={`contact-panel ${isFormOpen ? 'is-open' : ''}`} id="contact-form-panel">
+        <div className={`contact-panel ${isFormOpen ? 'is-open' : ''}`} id="contact-form-panel" hidden={!isFormOpen}>
           <div className="contact-panel__copy">
             <h3>Cuéntame el contexto y vemos si tiene sentido automatizarlo.</h3>
             <p>No hace falta que traigas una idea cerrada. Con que me expliques el problema, ya podemos empezar.</p>
           </div>
-          <form className="contact-form">
+          <form className="contact-form" onSubmit={prepareEmail} aria-describedby="contact-form-note">
             <label>
               <span>Nombre</span>
-              <input type="text" name="name" autoComplete="name" required />
+              <input type="text" name="name" autoComplete="name" maxLength={100} required />
             </label>
             <label>
               <span>Empresa</span>
-              <input type="text" name="company" autoComplete="organization" />
+              <input type="text" name="company" autoComplete="organization" maxLength={150} />
             </label>
             <label>
               <span>Email</span>
-              <input type="email" name="email" autoComplete="email" required />
+              <input type="email" name="email" autoComplete="email" maxLength={254} required />
             </label>
             <label>
               <span>Mensaje</span>
-              <textarea name="message" rows="4" required />
+              <textarea name="message" rows="4" maxLength={1500} required />
             </label>
-            <button className="button button-primary" type="submit">Analizar mi proyecto</button>
+            <p className="contact-form-note" id="contact-form-note">
+              Se abrirá tu aplicación de correo con el mensaje preparado. Revisa y envía el correo allí;
+              este formulario no lo envía ni guarda los datos en la web.
+            </p>
+            <button className="button button-primary" type="submit">Preparar correo</button>
+            <p className="contact-form-note" role="status">
+              {emailPrepared ? 'Mensaje preparado. Si no se abre tu aplicación de correo, puedes copiar el mensaje y escribir a juliajimenezayuso@maimonet.es.' : ''}
+            </p>
           </form>
         </div>
       </div>

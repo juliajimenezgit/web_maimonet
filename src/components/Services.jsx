@@ -13,13 +13,13 @@ const services = [
       'Correos que se clasifican, responden o derivan solos',
       'Documentos que se generan a partir de datos reales',
       'Avisos, seguimientos y flujos internos automatizados',
-      'Herramientas que se conectan entre sí',
+      'Integraciones entre las herramientas que ya utilizas',
       'Menos copiar y pegar, menos despistes, más foco',
     ],
   },
   {
     number: '02',
-    title: 'Documentos, informes e información clara',
+    title: 'Automatización de documentos e informes',
     description: (
       <>
         Trabajo con empresas que tienen información repartida en correos, PDFs, Excels o
@@ -46,7 +46,7 @@ const services = [
       </>
     ),
     examples: [
-      'Aplicaciones privadas para el equipo',
+      'Desarrollo de aplicaciones web para el equipo',
       'CRM y gestión de clientes a medida',
       'Paneles para ver datos importantes de un vistazo',
       'Bases de datos centralizadas y ordenadas',
@@ -94,11 +94,11 @@ function Services() {
       <div className="section__inner">
         <div className="section-heading section-heading--wide" data-reveal>
           <span className="eyebrow">Servicios</span>
-          <h2>IA práctica para ahorrar tiempo, automatizar procesos y trabajar con más claridad.</h2>
+          <h2>Software y automatización para trabajar con más claridad.</h2>
           <p className="services-intro">
-            Maimonet nace para ayudar a empresas a usar la inteligencia artificial de forma
-            <strong> práctica, no teórica</strong>. La tecnología no tiene que complicar las
-            cosas, tiene que resolver tareas reales y aportar valor desde el primer momento.
+            Desarrollo software a medida, automatizo procesos empresariales y aplico
+            inteligencia artificial cuando ayuda a resolver el problema. Primero analizo
+            <strong> cómo trabaja tu equipo</strong>; después, construyo la herramienta que necesita.
           </p>
         </div>
         <div className="services-grid">

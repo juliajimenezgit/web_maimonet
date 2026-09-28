@@ -10,7 +10,17 @@ import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 
 function App() {
-  const [theme, setTheme] = useState(() => localStorage.getItem('maimonet-theme') || 'dark')
+  // The initial render matches the HTML generated at build time.
+  const [theme, setTheme] = useState('dark')
+
+  useEffect(() => {
+    try {
+      const savedTheme = localStorage.getItem('maimonet-theme')
+      if (savedTheme === 'light' || savedTheme === 'dark') setTheme(savedTheme)
+    } catch {
+      // The site remains usable when browser storage is unavailable.
+    }
+  }, [])
 
   useEffect(() => {
     const animatedItems = document.querySelectorAll('[data-reveal]')
@@ -19,22 +29,29 @@ function App() {
     let lastScrollY = window.scrollY
     let ticking = false
 
-    const observer = new IntersectionObserver(
+    const observer = typeof IntersectionObserver === 'function' ? new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          entry.target.classList.toggle('is-visible', entry.isIntersecting)
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible')
+            entry.target.classList.remove('reveal-pending')
+            observer.unobserve(entry.target)
+          }
         })
       },
       { threshold: 0.18, rootMargin: '-5% 0px -8%' },
-    )
+    ) : null
 
     const revealItems = () => {
-      if (window.innerWidth < 980) {
-        animatedItems.forEach((item) => item.classList.add('is-visible'))
-        return
-      }
+      if (!observer || window.innerWidth < 980 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
-      animatedItems.forEach((item) => observer.observe(item))
+      animatedItems.forEach((item) => {
+        // Visible by default; only animate individual elements below the fold.
+        if (item.getBoundingClientRect().top > window.innerHeight && !item.querySelector('[data-reveal]')) {
+          item.classList.add('reveal-pending')
+          observer.observe(item)
+        }
+      })
     }
 
     const updateScrollState = () => {
@@ -62,23 +79,34 @@ function App() {
     window.addEventListener('scroll', onScroll, { passive: true })
 
     return () => {
-      observer.disconnect()
+      observer?.disconnect()
+      animatedItems.forEach((item) => item.classList.remove('reveal-pending'))
       window.removeEventListener('scroll', onScroll)
     }
   }, [])
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
-    localStorage.setItem('maimonet-theme', theme)
   }, [theme])
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark'
+    setTheme(nextTheme)
+    try {
+      localStorage.setItem('maimonet-theme', nextTheme)
+    } catch {
+      // Theme switching does not require persistent storage.
+    }
+  }
 
   return (
     <>
+      <a className="skip-link" href="#contenido">Saltar al contenido</a>
       <Header
         theme={theme}
-        onToggleTheme={() => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))}
+        onToggleTheme={toggleTheme}
       />
-      <main>
+      <main id="contenido" tabIndex={-1}>
         <Hero theme={theme} />
         <Services />
         <Cases />

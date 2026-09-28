@@ -439,6 +439,7 @@
 .about-portrait img {
   width: min(420px, 100%);
   aspect-ratio: 1;
+  height: auto;
   border: 1px solid var(--line);
   border-radius: 999px;
   object-fit: cover;
@@ -802,7 +803,7 @@
 }
 
 .contact-panel.is-open {
-  max-height: 820px;
+  max-height: none;
   opacity: 1;
   padding: 42px;
   transform: translateY(0);
@@ -864,6 +865,9 @@
 }
 
 .site-footer {
+  --text: #f5f7fa;
+  --text-muted: rgba(245, 247, 250, 0.78);
+  --text-soft: rgba(245, 247, 250, 0.72);
   padding: 40px var(--page-gutter) 28px;
   border-top: 1px solid var(--line);
   background:
@@ -984,19 +988,26 @@
   font-size: 0.9rem;
 }
 
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 700ms ease, transform 700ms ease;
-}
-
-[data-scroll-direction='up'] [data-reveal]:not(.is-visible) {
-  transform: translateY(-18px);
-}
-
 [data-reveal].is-visible {
+  animation: revealIn 700ms ease both;
+}
+
+@keyframes revealIn {
+  from {
+    opacity: 0.35;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-reveal]:focus-within {
+  animation: none;
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1010,7 +1021,7 @@
     animation-iteration-count: 1 !important;
   }
 
-  [data-reveal] {
+  [data-reveal].reveal-pending {
     opacity: 1;
     transform: none;
   }
@@ -1327,4 +1338,28 @@
     grid-template-columns: 1fr;
     gap: 8px;
   }
+}
+:root[data-theme='light'] .eyebrow,
+:root[data-theme='light'] .card-number,
+:root[data-theme='light'] .case-card dt,
+:root[data-theme='light'] .process-step span,
+:root[data-theme='light'] .contact-direct span,
+:root[data-theme='light'] .contact-card span {
+  color: #305bc0;
+}
+
+.header-cta,
+.button-primary {
+  background: linear-gradient(135deg, #6250de, #326bc4);
+}
+
+.contact-form-note {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+.contact-direct .contact-card--email strong,
+.site-footer__contact a {
+  overflow-wrap: anywhere;
 }
